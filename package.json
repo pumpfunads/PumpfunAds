@@ -1,0 +1,33 @@
+{
+  "name": "ads",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "pumpfunads.com: Pumpfun launchpad paired with $ADS; creator fees become ads for the coin",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch api/server.mjs",
+    "dev:web": "vite web --port 5421",
+    "build": "vite build web",
+    "start": "NODE_ENV=production node api/server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "e2e": "node e2e/chain.mjs && node e2e/api.mjs"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@noble/curves": "^2.4.0",
+    "@solana/spl-token": "^0.4.15",
+    "@solana/web3.js": "^1.98.4",
+    "@wallet-standard/app": "^1.1.1",
+    "bn.js": "^5.2.5",
+    "bs58": "^6.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.0",
+    "vite": "^7.1.0"
+  }
+}
